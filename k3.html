@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body style="margin: 0">
+  <div id="header" style="padding: 1rem 0; background-color: lightblue">
+    <h1 id="main-heading" style="margin: 0">Fruit Shop</h1>
+  </div>
+  <div>
+    <h2 id="basket-heading">Fruits In Basket</h2>
+    <ul class="fruits">
+      <li class="fruit">Banana</li>
+      <li class="fruit">Apple</li>
+      <li class="fruit">Orange</li>
+      <li class="fruit">Kiwi</li>
+    </ul>
+  </div>
+  <div id="thanks"></div>
+</body>
+<script>
+    // Write the code as shown in the video below:
+    const z=document.querySelector('#basket-heading');
+z.style.color='brown';
+ const a=document.querySelector('#main-heading');
+a.style.textAlign='center';
+const b=document.querySelector('.fruits');
+b.style.backgroundColor='grey';
+b.style.padding='30px';
+b.style.margin='30px';
+b.style.width='50%';
+b.style.borderRadius='5px';
+b.style.listStyleType='none';
+const c=document.querySelector('h2');
+c.style.marginLeft='30px';
+/*const d=document.querySelector('.fruit:last-child');
+d.style.backgroundColor='white';
+const e=document.querySelector('.fruit:nth-child(2)');
+e.style.backgroundColor='white';*/
+const f=document.querySelectorAll('.fruit'); 
+/*for(let i=1;i<f.length;i+=2){
+  f[i].style.backgroundColor='brown';
+  f[i].style.Color='white';
+}*/
+for(let i=0;i<f.length;i++){
+  f[i].style.backgroundColor='white';
+  f[i].style.padding='10px';
+  f[i].style.margin='10px';
+  f[i].style.borderRadius='5px';
+}
+const g=document.querySelectorAll('.fruit:nth-child(even)'); 
+for(let i=0;i<g.length;i++){
+g[i].style.backgroundColor='brown';
+}
+const e=document.querySelectorAll('.fruit:nth-child(even)'); 
+for(let i=0;i<e.length;i++){
+e[i].style.Color='white';
+}
+</script>
+
+</html>
