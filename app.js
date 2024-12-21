@@ -1,30 +1,12 @@
-const path = require('path');
-
-const express = require('express');
-const bodyParser = require('body-parser');
-
-const errorController = require('./controllers/error');
-const db=require('./util/database')
-const app = express();
-
-app.set('view engine', 'ejs');
-app.set('views', 'views');
-
-const adminRoutes = require('./routes/admin');
-const shopRoutes = require('./routes/shop');
-
-// db.execute('select * from product').then(result=>{
-//     console.log(result[0],result[1]);
-// }).catch(err=>{
-//   console.log(err)
-// })
-
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/admin', adminRoutes);
-app.use(shopRoutes);
-
-app.use(errorController.get404);
-
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const body_parser_1 = __importDefault(require("body-parser"));
+const todos_1 = __importDefault(require("./routes/todos"));
+const app = (0, express_1.default)();
+app.use(body_parser_1.default.json());
+app.use(todos_1.default);
 app.listen(3000);
